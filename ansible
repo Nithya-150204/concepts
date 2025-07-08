@@ -1,0 +1,92 @@
+----------------
+ansible -instancae
+ 1  hostname
+    2  ip a s
+    3  hostname
+    4  ip a s
+    5  passwd root
+    6  vim /etc/hosts
+    7  vim /etc/ssh/sshd_config
+    8  systemctl restart sshd
+    9  systemctl enable sshd
+   10   yum install ansible*
+   11  ansible --version
+   12  mkdir -p /etc/ansible
+   13  ll -d /etc/ansible
+   14   cd /etc/ansible
+   15  vim ansible.cfg
+   16   ansible --version
+   17  cd
+   18  ping nodeone.example.com
+   19  ping nodetwo.example.com
+   20  ssh-keygen
+   21  cd .ssh/
+   22  ll
+   23  cat id_rsa.pub
+copy the ssh key and paste it in both the vim of authorized keys....
+   24  cd
+   25  ssh-copy-id root@nodeone.example.com
+   26  ssh-copy-id root@nodetwo.example.com
+   27  ssh root@nodeone.example.com
+   28  ssh root@nodetwo.example.com
+   29  cd /etc/ansible
+   30  vim hosts
+   31  ansible all -m ping
+   32   ansible all -m ping -a data=nithya
+   33  ansible all -m user -a 'name=nithya uid=1200 home=/ltimindtree state=present'
+   34  hostnamectl set-hostname ansible.example.com
+   35  bash
+   36  cd /etc/ansible
+   37  ansible all -m user -a 'name=nithya uid=1200 home=/ltimindtree state=present'
+   38  cd /tmp
+   39  ll
+   40  cd
+   41  cd /etc/ansible
+go to one create and come:
+   42  cd /mnt/
+   43  ansible nodeone.example.com -m fetch -a 'src=/tmp/nithya.txt dest=/mnt'
+   44  ll
+   45  cd nodeone.example.com
+   46  ll
+   47  cd tmp
+   48  ll
+   49  cat nithya.txt
+   50  cd
+   51  cd /etc/ansible/
+   52  mkdir project-x/
+   53  cd project-x/
+   54  vim simple-playbook.yaml
+   55  echo "this is milestone-3 practice" > index.html
+   56  ll
+   57  yum install httpd -y
+   58  systemctl restart httpd
+   59  systemctl enable httpd
+   60  ansible-playbook simple-playbook.yaml --syntax-check
+   61  ansible-playbook simple-playbook.yaml -C
+   62  ansible-playbook simple-playbook.yaml
+
+-----------------node-one-----------
+hostname
+    3  ip a s
+    4  passwd root
+    5  vim /etc/hosts
+    6  vim /etc/ssh/sshd_config
+    7  systemctl restart sshd
+    8  systemctl enable sshd
+    9  cd .ssh/
+   10  ll
+   11  vim authorized_keys
+   12  cd
+   13   hostnamectl set-hostname nodeone.example.com
+   14  bash
+   15  cd /tmp
+   16  vim nithya.txt
+   17  cat nithya.txt
+   18  cd
+   19  cd /var/www/html
+   20  ll
+   21  cat index.html
+   22  cd
+   23  yum install httpd -y
+   24  systemctl restart httpd
+   25  systemctl enable httpd
