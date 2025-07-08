@@ -90,3 +90,14 @@ hostname
    23  yum install httpd -y
    24  systemctl restart httpd
    25  systemctl enable httpd
+-------------node-two----------------
+    3  hostname
+    4  ip a s
+    5  passwd root
+    6  vim /etc/hosts
+    7  vim /etc/ssh/sshd_config
+    8  systemctl restart sshd
+    9  systemctl enable sshd
+   10  cd .ssh/
+   11  ll
+   12  vim authorized_keys
