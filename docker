@@ -1,0 +1,50 @@
+pull the ubuntu  
+
+    1  yum install docker*
+    2  systemctl enable docker
+    3  systemctl start docker
+    4  systemctl status docker
+    5  docker pull ubuntu
+    6  docker pull httpd
+    7  docker ps -a
+   10  docker run -it --name web -p 8081:80 ubuntu /bin/bash
+         apt update -y
+         apt install apache2 -y
+         cd /var/www/html
+         cat > index.html 
+         hi..hellooo
+         press ctrl+d
+         service apache2 start
+         cd
+         ctrl+p+Q
+
+       docker ps -a
+   12  docker inspect web | less
+   13  curl http://172.17.0.3
+copy and paste the public_ip of instance and run with with specified port at to as 8081 with enabled in security group.
+-------------------------
+  nginx
+  [root@docker ~]# history
+    1  yum install docker* -y
+    2  systemctl start docker
+    3  systemctl enable docker
+    4  docker images ls
+    5  docker pull nginx:stable-perl
+    6  yum install nginx* -y
+    7  systemctl start nginx.service
+    8  systemctl enable nginx.service
+    9  docker imagesi
+   10  docker run -itd --name webapp -p 8080:8080 nginx /bin/bash
+   11  docker ps -a
+   12  docker attach e567bfe69413
+   13  curl http://localhost
+   14  history
+[root@docker ~]# docker attach webapp
+root@e567bfe69413:/# history
+    1  apt update -y
+    2  apt install nginx
+    3  service nginx start
+    4  service nginx status
+    5  history
+-----------------
+  
