@@ -58,7 +58,36 @@ httpd
         name: vsftpd
         state: latest
 
- 
+ ------------------
+copy
+
+---
+- name: create multiple users
+  hosts: all
+  tasks:
+    - name: create multiple users
+      user:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - sanjaya
+        - drcula
+        - iraonman
+-------------------------------
+add users
+
+---
+- name: create multiple users
+  hosts: all
+  tasks:
+    - name: create multiple users
+      user:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - sanjaya
+        - drcula
+        - iraonman
 
 ----------------
 ansible -instancae
