@@ -122,6 +122,8 @@ copy the ssh key and paste it in both the vim of authorized keys....
    28  ssh root@nodetwo.example.com
    29  cd /etc/ansible
    30  vim hosts
+[dev-server]
+one.example.com
    31  ansible all -m ping
    32   ansible all -m ping -a data=nithya
    33  ansible all -m user -a 'name=nithya uid=1200 home=/ltimindtree state=present'
