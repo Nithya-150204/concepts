@@ -195,3 +195,60 @@ hostname
        cd
    21  cd /tmp
    22  ll
+
+------------------------------------------------------
+---
+- name: creating ec2 instance
+  hosts: localhost
+  vars_files:
+
+      - creds.yaml
+  tasks:
+        - name: creating Ec2 instance via Ansible
+          amazon.aws.ec2_instance:
+            name: k8s-master
+            instance_type: t2.micro
+            image_id: ami-05ffe3c48a9991133
+            vpc_subnet_id: subnet-096d530a2b0b4637d
+            security_group: sg-08ae7df8b4050c4ed
+            key_name: nithya-key
+            region: us-east-1
+            count: 1
+            state: present
+
+----------------
+ansible --version
+    2  mkdir -p /etc/ansible
+    3  cd /etc/ansible
+    4  vim ansible.cfg
+    5  ansible-galaxy collection install amazon.aws
+    6  ansible-galaxy collection install amazon.aws --force
+    7  yum install pip*
+    8  yum install python*
+    9  yum install python* --allowerasing --skip-broken
+   10  yum install ansible*
+   11  hostnamectl set-hostname ansible.example.com
+   12  bash
+   13  pip install boto
+   14  install pip install boto3
+   15  pip install boto3
+   16  dig google.com
+   17  vim hosts
+   18  cd
+   19  ssh-keygen
+   20  ansible localhost --list-host
+   21  curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+   22  unzip awscliv2.zip
+   23  sudo ./aws/install
+   24  aws configure
+   25  cd /etc/ansible
+   26  vim creds.yaml
+   27  ll
+   28  vim ec2.yaml
+   29  ansible-playbook ec2.yaml --syntax-check
+   30  vim creds.yaml
+   31  ansible-playbook ec2.yaml --syntax-check
+   32  ansible-playbook ec2.yaml -C
+   33  ansible-playbook ec2.yaml
+   34  vim ec2.yaml
+   35  ansible-playbook ec2.yaml
