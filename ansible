@@ -58,22 +58,22 @@ httpd
         name: vsftpd
         state: latest
 
- ------------------
+ --------------------------------------
 copy
 
 ---
-- name: create multiple users
+- name: copied files
   hosts: all
   tasks:
-    - name: create multiple users
-      user:
-        name: "{{ item }}"
-        state: present
+    - name: copied multiple files
+      copy:
+        src: "{{ item }}"
+        dest: /tmp
       loop:
-        - sanjaya
-        - drcula
-        - iraonman
--------------------------------
+        - /etc/passwd
+        - /etc/fstab
+        - /etc/gshadow
+--------------------------------------------
 add users
 
 ---
