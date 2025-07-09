@@ -197,7 +197,17 @@ hostname
    22  ll
 
 ------------------------------------------------------
----
+vim creds
+aws_acces_key : hhhhhh
+aws_access_secret_key : ddd
+
+----------------------------------------------------
+vim hosts
+
+[localhost]
+localhost
+localhost ansible_connection=local ansible_python_interpreter=/usr/bin/python3
+----------------------------------------------------
 - name: creating ec2 instance
   hosts: localhost
   vars_files:
