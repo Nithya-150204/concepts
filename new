@@ -1,0 +1,37 @@
+  1  passwd root
+    2  ip a s
+    3  hostname
+    4  vim /etc/hosts
+    5   vim /etc/ssh/sshd_config
+    6  systemctl restart sshd
+    7  systemctl enable sshd
+    8  yum install ansible*
+    9  ssh-copy-id root@localhost
+   10  ssh-keygen
+   11  ssh-copy-id root@localhost
+   12  yum install python*
+   13  yum install python* --allowerasing
+   14  yum install python* --allowerasing --skip-broken
+   15  pip install boto
+   16  pip install botocore
+   17  dig google.com
+   18   mkdir -p /etc/ansible
+   19   ll -d /etc/ansible
+   20  cd /etc/ansible
+   21  vim ansible.cfg
+   22  ansible-galaxy collection install amazon.aws
+   23  vim hosts
+   24  cd
+   25  ansible localhost --list-host
+   26  curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+   27   unzip awscliv2.zip
+   28   sudo ./aws/install
+   29  aws configure
+   30   cd /etc/ansible
+   31  vim creds.yaml
+   32  ll
+   33  vim ec2.yaml
+   34  ansible-playbook ec2.yaml --syntax-check
+   35  ansible-playbook ec2.yaml -C
+   36  ansible-playbook ec2.yaml
+   37  history
